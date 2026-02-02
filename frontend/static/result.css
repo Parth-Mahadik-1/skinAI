@@ -1,0 +1,216 @@
+/* ===============================
+   GLOBAL
+================================ */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===============================
+   RESULT WRAPPER (MAIN LAYOUT)
+================================ */
+.result-wrapper {
+    display: flex;
+    gap: 50px;                     /* SPACE BETWEEN LEFT & RIGHT */
+    max-width: 1200px;
+    margin: 60px ;             /* CENTER ON PAGE */
+    padding: 0 30px;
+    align-items: stretch;
+}
+
+/* ===============================
+   LEFT BOX (IMAGE + PREDICTION)
+================================ */
+.result-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* ===============================
+   RIGHT BOX (INFO)
+================================ */
+.result-right {
+    flex: 1;
+}
+
+/* ===============================
+   CONTAINER (LEFT CARD)
+================================ */
+.container {
+    background: #111;
+    width: 100%;
+    max-width: 480px;
+    padding: 55px 50px 60px;
+    border-radius: 18px;
+    box-shadow: 0px 0px 25px rgba(255, 145, 77, 0.35);
+    text-align: center;
+    animation: fadeInLeft 0.9s ease-out;
+}
+
+/* ===============================
+   HEADING
+================================ */
+.container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #ff914d;
+}
+
+/* ===============================
+   PREDICTED IMAGE
+================================ */
+.result-img {
+    width: 100%;
+    max-width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+}
+
+/* ===============================
+   PREDICTION BOX
+================================ */
+.prediction-box {
+    background-color: #1a1a1a;
+    padding: 20px 25px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    box-shadow: inset 0 2px 8px rgba(255,145,77,0.2);
+}
+
+/* ===============================
+   CONFIDENCE BAR
+================================ */
+.confidence-bar {
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 28px;
+    margin-top: 12px;
+}
+
+.confidence-fill {
+    background: linear-gradient(135deg, #ff914d, #ffa76b);
+    height: 100%;
+    color: #111;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 1s ease-in-out;
+}
+
+/* ===============================
+   RESULT INFO SECTION (RIGHT)
+================================ */
+.result-info {
+    background: #111;
+    padding: 45px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255, 145, 77, 0.25);
+    animation: fadeInRight 0.9s ease;
+   
+
+}
+
+
+.result-info h3 {
+    color: #ff914d;
+    margin-bottom: 15px;
+}
+
+.result-info p {
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.care-tips {
+    list-style: none;
+    padding-left: 0;
+}
+
+.care-tips li {
+    padding-left: 25px;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.care-tips li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #ff914d;
+}
+
+/* AI confidence */
+.ai-confidence {
+    margin-top: 25px;
+    padding: 15px;
+    background: #1a1a1a;
+    border-radius: 12px;
+}
+
+.disclaimer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.analyze-btn {
+    background: #ff914d;            /* orange button */
+    color: #111;                     /* dark text */
+    font-size: 1.1rem;               /* slightly bigger text */
+    font-weight: 600;
+    padding: 14px 30px;              /* bigger button size */
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(255, 145, 77, 0.4);
+}
+
+.analyze-btn:hover {
+    background: #ffa76b;            /* lighter orange on hover */
+    transform: translateY(-2px);    /* subtle lift effect */
+    box-shadow: 0 10px 25px rgba(255, 145, 77, 0.5);
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+    .result-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-25px); }
+    to { opacity: 1; transform: translateX(0); }
+}

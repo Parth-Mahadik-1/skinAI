@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result | SkinAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+
+{% include 'navbar.html' %}
+
+<!-- MAIN FLEX WRAPPER (REQUIRED FOR LEFT–RIGHT LAYOUT) -->
+<div class="result-wrapper">
+
+    <!-- LEFT SIDE : RESULT BOX -->
+    <div class="result-left">
+        <div class="container">
+            <h2>Prediction Result</h2>
+
+            <!-- Predicted Image -->
+            <img src="/{{ image_path }}" class="result-img" alt="Predicted Image">
+
+            <!-- Result Box -->
+            <div class="prediction-box">
+                <p><strong>Acne Type:</strong> {{ acne_type }}</p>
+
+                <div class="confidence-bar">
+                    <div class="confidence-fill" style="width: {{ confidence }}%">
+                        {{ confidence }}%
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+           <a href="{{ url_for('upload_img') }}">
+                <button class="analyze-btn">Analyze Another Image</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE : RESULT INFO -->
+    <div class="result-right">
+        <div class="result-info-wrapper">
+        <div class="result-info">
+            <h3>Understanding Your Result</h3>
+            <p>
+                SkinAI analyzed your image and detected
+                <strong>{{ acne_type }}</strong> with high confidence.
+                This acne type is commonly linked to clogged pores and excess oil production.
+            </p>
+
+            <h3>Recommended Care Tips</h3>
+            <ul class="care-tips">
+                <li>Clean your face twice daily with a gentle cleanser</li>
+                <li>Avoid touching or squeezing affected areas</li>
+                <li>Use oil-free, non-comedogenic products</li>
+                <li>Maintain a consistent skincare routine</li>
+            </ul>
+
+            <div class="ai-confidence">
+                🔬 <strong>AI Confidence:</strong> {{ confidence }}%
+                <div>✔ Deep learning powered analysis</div>
+                <div>✔ Dermatology-validated dataset</div>
+            </div>
+
+            <p class="disclaimer">
+                ⚠️ This is an AI-based prediction and not a medical diagnosis.
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

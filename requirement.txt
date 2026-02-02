@@ -1,0 +1,35 @@
+
+flask==3.0.3
+streamlit==1.27.0
+
+# ===============================
+# Machine Learning / Deep Learning
+# ===============================
+tensorflow==2.19.0
+numpy==1.26.4
+pillow==9.5.0
+matplotlib==3.8.0
+
+# ===============================
+# LangChain Core
+# ===============================
+langchain == 1.0.0
+langchain-core == 1.0.0
+langchain-community==0.4
+
+# ===============================
+# Hugging Face Integration
+# ===============================
+llangchain-huggingface == 1.0.0
+transformers == 4.57.1
+huggingface-hub 
+
+# ===============================
+# Environment Variable Management
+# ===============================
+python-dotenv==1.0.1
+
+# ===============================
+# PDF Generation
+# ===============================
+reportlab==4.1.0
